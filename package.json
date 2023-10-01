@@ -4,7 +4,7 @@
   "description": "Create a basic web application using the MERN (MongoDB, Express.js, React, Node.js) stack that allows users to Register with a username and password, Log in to their account, and Create a simple 'to-do list' where users can add and remove tasks.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
     "dev": "nodemon index.js"
   },
   "keywords": [
