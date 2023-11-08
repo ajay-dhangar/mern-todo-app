@@ -8,7 +8,7 @@ dotenv.config()
 const SignUp = async (req,res)=>{
     const data = req.body
 
-    const {email, password} = data
+    const {name, email, password} = data
 
     try {
         const existingUser  = await User.findOne({email})
@@ -20,7 +20,7 @@ const SignUp = async (req,res)=>{
 
         const hashedPassword = await bcrypt.hash(password,10)
 
-        const newUser = new User({email, password:hashedPassword})
+        const newUser = new User({name, email, password:hashedPassword})
         await newUser.save()
 
         const token = jwt.sign({UserId : newUser._id},process.env.JWT_SECRET_KEY,{expiresIn:'2d'} )
